@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8ffc8"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03" />
+
+    <TextView
+        android:id="@+id/Tomato Salsa"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Tomato Salsa"
+        android:textSize="24sp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="4.5" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.28"
+        app:srcCompat="@mipmap/salsa" />
+
+    <TextView
+        android:id="@+id/ingredientTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.07"
+        android:gravity="center_horizontal"
+        android:text="Ingredients"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:text="tomato, garlic, onion"
+        android:textSize="18sp"
+        android:layout_weight="0.04" />
+
+    <TextView
+        android:id="@+id/methodTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:gravity="center_horizontal"
+        android:text="Method"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="371dp"
+        android:layout_height="wrap_content"
+        android:text="1 Start by roughly chopping the tomatoes, chiles, and onions. Be very careful while handling the chile peppers. If you can, avoid touching the cut peppers with your hands. (I often use disposable gloves or hold the peppers with a plastic sandwich bag.) Wash your hands thoroughly with soap and hot water after handling and avoid touching your eyes for several hours. Set aside some of the seeds from the peppers. If the salsa isn't hot enough, you can add a few for more heat.  "
+        android:textSize="18sp" />
 
 </LinearLayout>
