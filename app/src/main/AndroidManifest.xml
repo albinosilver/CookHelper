@@ -8,14 +8,16 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecipeSystem">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SearchActivity" />
+        <activity android:name=".EditAttributeActivity" />
+        <activity android:name=".EditRecipeActivity" />
+        <activity android:name=".ViewRecipeActivity" />
         <activity
             android:name=".RecipeStepActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
