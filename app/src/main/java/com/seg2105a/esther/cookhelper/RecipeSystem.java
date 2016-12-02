@@ -5,9 +5,6 @@ package com.seg2105a.esther.cookhelper;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-
 import java.io.FileInputStream;
 import java.util.*;
 

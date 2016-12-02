@@ -13,105 +13,137 @@
     tools:context="com.seg2105a.esther.cookhelper.RecipeSystem"
     android:weightSum="1">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="0.82">
-
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            app:fabSize="mini"
-            app:srcCompat="@android:drawable/ic_menu_help"
-            android:id="@+id/floatingActionButton"
-            android:layout_weight="0.82" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:weightSum="1"
-            android:layout_marginLeft="@dimen/activity_vertical_margin"
-            android:layout_marginRight="@dimen/activity_vertical_margin"
-            android:layout_weight="0.82">
+            android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/textView"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.82">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    app:fabSize="mini"
+                    app:srcCompat="@android:drawable/ic_menu_help"
+                    android:id="@+id/floatingActionButton"
+                    android:layout_weight="0.82"
+                    app:elevation="5dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:layout_marginRight="@dimen/activity_vertical_margin"
+                    android:layout_weight="0.82">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:gravity="center_horizontal"
+                        android:text="Recipe of the Day"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Tomato Salsa"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="286dp"
+                        android:layout_height="206dp"
+                        app:srcCompat="@drawable/salsa_image"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="4.5" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_weight="0.82" />
+
+            <Switch
+                android:text="Advanced Search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.02"
-                android:gravity="center_horizontal"
-                android:text="Recipe of the Day"
-                android:textSize="30sp" />
+                android:id="@+id/switch1"
+                android:layout_weight="0.82" />
 
-            <TextView
-                android:id="@+id/textView3"
+            <include
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Tomato Salsa"
-                android:textSize="24sp" />
+                layout="@layout/activity_advanced_search_layout"
+                android:layout_weight="0.82"
+                android:visibility="gone" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="286dp"
-                android:layout_height="206dp"
-                app:srcCompat="@drawable/salsa_image"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.82">
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:isIndicator="true"
-                android:numStars="5"
-                android:rating="4.5" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:inputType="textFilter"
+                        android:ems="10"
+                        android:id="@+id/editText"
+                        android:layout_weight="1"
+                        android:layout_width="70dp"
+                        android:hint="Search...." />
+
+                    <Spinner
+                        android:layout_height="match_parent"
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:entries="@array/search_type_array" />
+
+                </LinearLayout>
+
+                <Button
+                    android:text="Search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button3"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:layout_weight="0.82" />
+
+            </LinearLayout>
 
         </LinearLayout>
-    </RelativeLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
-
-    <Switch
-        android:text="Advanced Search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch1" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_height="wrap_content"
-            android:inputType="textFilter"
-            android:text="Search...."
-            android:ems="10"
-            android:id="@+id/editText"
-            android:layout_weight="1"
-            android:layout_width="70dp" />
-
-        <Spinner
-            android:layout_height="match_parent"
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:entries="@array/search_type_array" />
-    </LinearLayout>
-
-    <Button
-        android:text="Search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:backgroundTint="@color/colorPrimary"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+    </ScrollView>
 
 
 </LinearLayout>

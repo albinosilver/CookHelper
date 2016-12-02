@@ -11,13 +11,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     >
 
-    <Switch
-        android:text="Advanced Search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch2"
-        android:checked="true" />
-
     <TextView
         android:text="Category:"
         android:layout_width="match_parent"
@@ -39,10 +32,10 @@
         android:textOff="And"
         android:textOn="Or"
         style="@style/AppTheme"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@color/white_text"
         android:backgroundTint="@color/colorPrimary"
         android:checked="false"
-        app:buttonTint="@color/common_google_signin_btn_text_dark_disabled" />
+        app:buttonTint="@color/white_text" />
 
     <TextView
         android:text="Type:"
@@ -66,7 +59,7 @@
         android:textOn="OR"
         android:checked="true"
         style="@style/AppTheme"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@color/white_text"
         android:backgroundTint="?android:attr/colorPrimary" />
 
     <TextView
@@ -87,6 +80,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button8"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@color/white_text"
         android:backgroundTint="@color/colorAccent" />
 </LinearLayout>
