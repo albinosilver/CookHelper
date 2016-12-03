@@ -1,34 +1,37 @@
-/*PLEASE DO NOT EDIT THIS CODE*/
-/*This code was generated using the UMPLE 1.24.0-abedcd4 modeling language!*/
-package com.seg2105a.esther.cookhelper;
+    /*PLEASE DO NOT EDIT THIS CODE*/
+    /*This code was generated using the UMPLE 1.24.0-abedcd4 modeling language!*/
+    package com.seg2105a.esther.cookhelper;
 
-import java.util.*;
+    import java.util.*;
 
-public class Recipe
-{
+    public class Recipe
+    {
 
-  //------------------------
-  // MEMBER VARIABLES
-  //------------------------
+    //------------------------
+    // MEMBER VARIABLES
+    //------------------------
 
-  //Recipe Attributes
-  private String title;
-  private String description;
-  private Double cookingTime;
-  private String image;
+    //Recipe Attributes
+    private int id;
+    private String created_at;
+    private String title;
+    private String description;
+    private Double cookingTime;
+    private Integer serving;
+    private String image;
 
-  //Recipe Associations
-  private RecipeSystem recipeSystem;
-  private List<RecipeStep> recipeSteps;
-  private List<Category> categories;
-  private List<RecipeType> recipeTypes;
+    //Recipe Associations
+    private RecipeSystem recipeSystem;
+    private List<RecipeStep> recipeSteps;
+    private List<Category> categories;
+    private List<RecipeType> recipeTypes;
 
-  //------------------------
-  // CONSTRUCTOR
-  //------------------------
+    //------------------------
+    // CONSTRUCTOR
+    //------------------------
 
-  public Recipe(String aTitle, String aDescription, Double aCookingTime, String aImage, RecipeSystem aRecipeSystem)
-  {
+    public Recipe(String aTitle, String aDescription, Double aCookingTime, String aImage, RecipeSystem aRecipeSystem)
+    {
     title = aTitle;
     description = aDescription;
     cookingTime = aCookingTime;
@@ -41,161 +44,173 @@ public class Recipe
     recipeSteps = new ArrayList<RecipeStep>();
     categories = new ArrayList<Category>();
     recipeTypes = new ArrayList<RecipeType>();
-  }
+    }
 
-  //------------------------
-  // INTERFACE
-  //------------------------
+    public Recipe(){
+    title = null;
+    description = null;
+    cookingTime = null;
+    image = null;
+    setSystem(null);
 
-  public boolean setTitle(String aTitle)
-  {
+    recipeSteps = new ArrayList<RecipeStep>();
+    categories = new ArrayList<Category>();
+    recipeTypes = new ArrayList<RecipeType>();
+    }
+
+    //------------------------
+    // INTERFACE
+    //------------------------
+
+    public boolean setTitle(String aTitle)
+    {
     boolean wasSet = false;
     title = aTitle;
     wasSet = true;
     return wasSet;
-  }
+    }
 
-  public boolean setDescription(String aDescription)
-  {
+    public boolean setDescription(String aDescription)
+    {
     boolean wasSet = false;
     description = aDescription;
     wasSet = true;
     return wasSet;
-  }
+    }
 
-  public boolean setCookingTime(Double aCookingTime)
-  {
+    public boolean setCookingTime(Double aCookingTime)
+    {
     boolean wasSet = false;
     cookingTime = aCookingTime;
     wasSet = true;
     return wasSet;
-  }
+    }
 
-  public boolean setImage(String aImage)
-  {
+    public boolean setImage(String aImage)
+    {
     boolean wasSet = false;
     image = aImage;
     wasSet = true;
     return wasSet;
-  }
+    }
 
-  public String getTitle()
-  {
+    public String getTitle()
+    {
     return title;
-  }
+    }
 
-  public String getDescription()
-  {
+    public String getDescription()
+    {
     return description;
-  }
+    }
 
-  public Double getCookingTime()
-  {
+    public Double getCookingTime()
+    {
     return cookingTime;
-  }
+    }
 
-  public String getImage()
-  {
+    public String getImage()
+    {
     return image;
-  }
+    }
 
-  public RecipeSystem getRecipeSystem()
-  {
+    public RecipeSystem getRecipeSystem()
+    {
     return recipeSystem;
-  }
+    }
 
-  public RecipeStep getRecipeStep(int index)
-  {
+    public RecipeStep getRecipeStep(int index)
+    {
     RecipeStep aRecipeStep = recipeSteps.get(index);
     return aRecipeStep;
-  }
+    }
 
-  public List<RecipeStep> getRecipeSteps()
-  {
+    public List<RecipeStep> getRecipeSteps()
+    {
     List<RecipeStep> newRecipeSteps = Collections.unmodifiableList(recipeSteps);
     return newRecipeSteps;
-  }
+    }
 
-  public int numberOfRecipeSteps()
-  {
+    public int numberOfRecipeSteps()
+    {
     int number = recipeSteps.size();
     return number;
-  }
+    }
 
-  public boolean hasRecipeSteps()
-  {
+    public boolean hasRecipeSteps()
+    {
     boolean has = recipeSteps.size() > 0;
     return has;
-  }
+    }
 
-  public int indexOfRecipeStep(RecipeStep aRecipeStep)
-  {
+    public int indexOfRecipeStep(RecipeStep aRecipeStep)
+    {
     int index = recipeSteps.indexOf(aRecipeStep);
     return index;
-  }
+    }
 
-  public Category getCategory(int index)
-  {
+    public Category getCategory(int index)
+    {
     Category aCategory = categories.get(index);
     return aCategory;
-  }
+    }
 
-  public List<Category> getCategories()
-  {
+    public List<Category> getCategories()
+    {
     List<Category> newCategories = Collections.unmodifiableList(categories);
     return newCategories;
-  }
+    }
 
-  public int numberOfCategories()
-  {
+    public int numberOfCategories()
+    {
     int number = categories.size();
     return number;
-  }
+    }
 
-  public boolean hasCategories()
-  {
+    public boolean hasCategories()
+    {
     boolean has = categories.size() > 0;
     return has;
-  }
+    }
 
-  public int indexOfCategory(Category aCategory)
-  {
+    public int indexOfCategory(Category aCategory)
+    {
     int index = categories.indexOf(aCategory);
     return index;
-  }
+    }
 
-  public RecipeType getRecipeType(int index)
-  {
+    public RecipeType getRecipeType(int index)
+    {
     RecipeType aRecipeType = recipeTypes.get(index);
     return aRecipeType;
-  }
+    }
 
-  public List<RecipeType> getRecipeTypes()
-  {
+    public List<RecipeType> getRecipeTypes()
+    {
     List<RecipeType> newRecipeTypes = Collections.unmodifiableList(recipeTypes);
     return newRecipeTypes;
-  }
+    }
 
-  public int numberOfRecipeTypes()
-  {
+    public int numberOfRecipeTypes()
+    {
     int number = recipeTypes.size();
     return number;
-  }
+    }
 
-  public boolean hasRecipeTypes()
-  {
+    public boolean hasRecipeTypes()
+    {
     boolean has = recipeTypes.size() > 0;
     return has;
-  }
+    }
 
-  public int indexOfRecipeType(RecipeType aRecipeType)
-  {
+    public int indexOfRecipeType(RecipeType aRecipeType)
+    {
     int index = recipeTypes.indexOf(aRecipeType);
     return index;
-  }
+    }
 
-  public boolean setSystem(RecipeSystem aRecipeSystem)
-  {
+    public boolean setSystem(RecipeSystem aRecipeSystem)
+    {
     boolean wasSet = false;
     if (aRecipeSystem == null)
     {
@@ -211,20 +226,25 @@ public class Recipe
     recipeSystem.addRecipe(this);
     wasSet = true;
     return wasSet;
-  }
+    }
 
-  public static int minimumNumberOfRecipeSteps()
-  {
+    public static int minimumNumberOfRecipeSteps()
+    {
     return 0;
-  }
+    }
 
-  public RecipeStep addRecipeStep(String aNumber, String aDescription, String aTimeRequired, boolean aCompleted)
-  {
+    public ArrayList<RecipeStep> setRecipeStep(String info){
+        // TODO: Parse String into an ArrayList
+        return new ArrayList<RecipeStep>();
+    }
+
+    public RecipeStep addRecipeStep(String aNumber, String aDescription, String aTimeRequired, boolean aCompleted)
+    {
     return new RecipeStep(aNumber, aDescription, aTimeRequired, aCompleted, this);
-  }
+    }
 
-  public boolean addRecipeStep(RecipeStep aRecipeStep)
-  {
+    public boolean addRecipeStep(RecipeStep aRecipeStep)
+    {
     boolean wasAdded = false;
     if (recipeSteps.contains(aRecipeStep)) { return false; }
     Recipe existingRecipe = aRecipeStep.getRecipe();
@@ -239,10 +259,10 @@ public class Recipe
     }
     wasAdded = true;
     return wasAdded;
-  }
+    }
 
-  public boolean removeRecipeStep(RecipeStep aRecipeStep)
-  {
+    public boolean removeRecipeStep(RecipeStep aRecipeStep)
+    {
     boolean wasRemoved = false;
     //Unable to remove aRecipeStep, as it must always have a recipe
     if (!this.equals(aRecipeStep.getRecipe()))
@@ -251,10 +271,10 @@ public class Recipe
       wasRemoved = true;
     }
     return wasRemoved;
-  }
+    }
 
-  public boolean addRecipeStepAt(RecipeStep aRecipeStep, int index)
-  {  
+    public boolean addRecipeStepAt(RecipeStep aRecipeStep, int index)
+    {
     boolean wasAdded = false;
     if(addRecipeStep(aRecipeStep))
     {
@@ -265,10 +285,10 @@ public class Recipe
       wasAdded = true;
     }
     return wasAdded;
-  }
+    }
 
-  public boolean addOrMoveRecipeStepAt(RecipeStep aRecipeStep, int index)
-  {
+    public boolean addOrMoveRecipeStepAt(RecipeStep aRecipeStep, int index)
+    {
     boolean wasAdded = false;
     if(recipeSteps.contains(aRecipeStep))
     {
@@ -277,21 +297,21 @@ public class Recipe
       recipeSteps.remove(aRecipeStep);
       recipeSteps.add(index, aRecipeStep);
       wasAdded = true;
-    } 
-    else 
+    }
+    else
     {
       wasAdded = addRecipeStepAt(aRecipeStep, index);
     }
     return wasAdded;
-  }
+    }
 
-  public static int minimumNumberOfCategories()
-  {
+    public static int minimumNumberOfCategories()
+    {
     return 0;
-  }
+    }
 
-  public boolean addCategory(Category aCategory)
-  {
+    public boolean addCategory(Category aCategory)
+    {
     boolean wasAdded = false;
     if (categories.contains(aCategory)) { return false; }
     categories.add(aCategory);
@@ -308,10 +328,10 @@ public class Recipe
       }
     }
     return wasAdded;
-  }
+    }
 
-  public boolean removeCategory(Category aCategory)
-  {
+    public boolean removeCategory(Category aCategory)
+    {
     boolean wasRemoved = false;
     if (!categories.contains(aCategory))
     {
@@ -333,10 +353,10 @@ public class Recipe
       }
     }
     return wasRemoved;
-  }
+    }
 
-  public boolean addCategoryAt(Category aCategory, int index)
-  {  
+    public boolean addCategoryAt(Category aCategory, int index)
+    {
     boolean wasAdded = false;
     if(addCategory(aCategory))
     {
@@ -347,10 +367,10 @@ public class Recipe
       wasAdded = true;
     }
     return wasAdded;
-  }
+    }
 
-  public boolean addOrMoveCategoryAt(Category aCategory, int index)
-  {
+    public boolean addOrMoveCategoryAt(Category aCategory, int index)
+    {
     boolean wasAdded = false;
     if(categories.contains(aCategory))
     {
@@ -359,21 +379,21 @@ public class Recipe
       categories.remove(aCategory);
       categories.add(index, aCategory);
       wasAdded = true;
-    } 
-    else 
+    }
+    else
     {
       wasAdded = addCategoryAt(aCategory, index);
     }
     return wasAdded;
-  }
+    }
 
-  public static int minimumNumberOfRecipeTypes()
-  {
+    public static int minimumNumberOfRecipeTypes()
+    {
     return 0;
-  }
+    }
 
-  public boolean addRecipeType(RecipeType aRecipeType)
-  {
+    public boolean addRecipeType(RecipeType aRecipeType)
+    {
     boolean wasAdded = false;
     if (recipeTypes.contains(aRecipeType)) { return false; }
     recipeTypes.add(aRecipeType);
@@ -390,10 +410,10 @@ public class Recipe
       }
     }
     return wasAdded;
-  }
+    }
 
-  public boolean removeRecipeType(RecipeType aRecipeType)
-  {
+    public boolean removeRecipeType(RecipeType aRecipeType)
+    {
     boolean wasRemoved = false;
     if (!recipeTypes.contains(aRecipeType))
     {
@@ -415,10 +435,10 @@ public class Recipe
       }
     }
     return wasRemoved;
-  }
+    }
 
-  public boolean addRecipeTypeAt(RecipeType aRecipeType, int index)
-  {  
+    public boolean addRecipeTypeAt(RecipeType aRecipeType, int index)
+    {
     boolean wasAdded = false;
     if(addRecipeType(aRecipeType))
     {
@@ -429,10 +449,10 @@ public class Recipe
       wasAdded = true;
     }
     return wasAdded;
-  }
+    }
 
-  public boolean addOrMoveRecipeTypeAt(RecipeType aRecipeType, int index)
-  {
+    public boolean addOrMoveRecipeTypeAt(RecipeType aRecipeType, int index)
+    {
     boolean wasAdded = false;
     if(recipeTypes.contains(aRecipeType))
     {
@@ -441,15 +461,15 @@ public class Recipe
       recipeTypes.remove(aRecipeType);
       recipeTypes.add(index, aRecipeType);
       wasAdded = true;
-    } 
-    else 
+    }
+    else
     {
       wasAdded = addRecipeTypeAt(aRecipeType, index);
     }
     return wasAdded;
-  }
+    }
 
-  public void delete() {
+    public void delete() {
       RecipeSystem placeholderRecipeSystem = recipeSystem;
       this.recipeSystem = null;
       placeholderRecipeSystem.removeRecipe(this);
@@ -469,10 +489,34 @@ public class Recipe
       for (RecipeType aRecipeType : copyOfRecipeTypes) {
           aRecipeType.removeRecipe(this);
       }
-  }
+    }
 
-  public String toString()
-  {
+    public int getID(){
+    return this.id;
+    }
+
+    public void setID(int id){
+    this.id = id;
+    }
+
+    public int getServing(){
+    return this.serving;
+    }
+
+    public void setServing(int serving){
+    this.serving = serving;
+    }
+
+    public String getCreatedAt(){
+    return this.created_at;
+    }
+
+    public void setCreatedAt(String time){
+    this.created_at = time;
+    }
+
+    public String toString()
+    {
     String outputString = "";
     return super.toString() + "["+
             "title" + ":" + getTitle()+ "," +
@@ -481,5 +525,5 @@ public class Recipe
             "image" + ":" + getImage()+ "]" +
             "  "
      + outputString;
-  }
-}
+    }
+    }

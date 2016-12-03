@@ -47,10 +47,12 @@
                     android:weightSum="1"
                     android:layout_marginLeft="@dimen/activity_vertical_margin"
                     android:layout_marginRight="@dimen/activity_vertical_margin"
-                    android:layout_weight="0.82">
+                    android:layout_weight="0.82"
+                    android:id="@+id/layoutFeatured"
+                    android:clickable="true">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/headingFeatured"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.02"
@@ -59,7 +61,7 @@
                         android:textSize="30sp" />
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/titleFeatured"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -75,7 +77,7 @@
                         android:paddingRight="10dp" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar"
+                        android:id="@+id/ratingFeatured"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:isIndicator="true"
@@ -94,7 +96,7 @@
                 android:text="Advanced Search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/switch1"
+                android:id="@+id/searchSwitch"
                 android:layout_weight="0.82" />
 
             <include
@@ -102,13 +104,15 @@
                 android:layout_height="wrap_content"
                 layout="@layout/activity_advanced_search_layout"
                 android:layout_weight="0.82"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:id="@+id/advancedSearch" />
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.82">
+                android:layout_weight="0.82"
+                android:id="@+id/basicSearch">
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -122,14 +126,14 @@
                         android:layout_height="wrap_content"
                         android:inputType="textFilter"
                         android:ems="10"
-                        android:id="@+id/editText"
+                        android:id="@+id/searchBox"
                         android:layout_weight="1"
                         android:layout_width="70dp"
                         android:hint="Search..."
                         />
 
                     <Spinner
-                        android:id="@+id/moreSpinner"
+                        android:id="@+id/searchType"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:entries="@array/search_type_array" />
@@ -142,14 +146,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.82"
                     android:backgroundTint="@color/colorPrimary"
-                    android:text="Search"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button"
                     android:textColor="@color/white_text"
-<<<<<<< HEAD
-                    android:layout_weight="0.82" />
-=======
-                    android:onClick="search"/>
->>>>>>> origin/master
+                    android:text="Search" />
+
 
             </LinearLayout>
 
