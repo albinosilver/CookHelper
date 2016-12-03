@@ -1,5 +1,6 @@
 package com.seg2105a.esther.cookhelper;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,13 +50,15 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
-    public void search(){
-        // refresh this result page with the information about what word to search for and in which scope
+    public void search(View view){
+        Intent goSearch = new Intent(SearchActivity.this, SearchActivity.class);
+        startActivity(goSearch);
 
     }
 
-    public void addRecipe(){
-        // go to the edit recipe page with no information
+    public void addRecipe(View view){
+        Intent addRecipe = new Intent(SearchActivity.this, EditRecipeActivity.class);
+        startActivity(addRecipe);
 
     }
 }
