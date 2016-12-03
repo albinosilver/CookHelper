@@ -131,7 +131,9 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:columnCount="2">
+                android:columnCount="2"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:text="Recipe Name:"
@@ -232,7 +234,8 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:weightSum="1">
 
                 <TextView
                     android:text="Add Image"
@@ -241,21 +244,21 @@
                     android:id="@+id/textView25" />
 
                 <EditText
-                    android:layout_width="198dp"
+                    android:layout_width="163dp"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/editText13" />
+                    android:id="@+id/editText13"
+                    android:layout_weight="0.38" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/button4"
-                    android:layout_weight="1"
+                    android:layout_width="68dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
                     android:text="Browse"
-                    android:textSize="14sp"
                     android:textColor="@color/white_text"
-                    android:backgroundTint="@color/colorPrimary" />
+                    android:textSize="8sp" />
             </LinearLayout>
 
             <LinearLayout
