@@ -16,7 +16,6 @@ public class RecipeSystem
 
   //RecipeSystem Attributes
   private String database;
-  //private DatabaseReference mDatabase;
 
   //RecipeSystem Associations
   private List<Recipe> recipes;
