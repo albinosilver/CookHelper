@@ -138,6 +138,7 @@
                     android:id="@+id/button3"
                     android:backgroundTint="@color/colorPrimary"
                     android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:textColor="@color/white_text"
                     android:layout_weight="0.82" />
 
             </LinearLayout>
