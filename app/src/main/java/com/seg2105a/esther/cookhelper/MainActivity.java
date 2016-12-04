@@ -2,6 +2,7 @@ package com.seg2105a.esther.cookhelper;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -27,33 +28,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         changeSwitch();
+        search();
         helpButton();
         recipeSelect();
-        search();
     }
 
     private void helpButton(){
+        // Jessica Zhan
         FloatingActionButton help = (FloatingActionButton) findViewById(R.id.helpButton);
         final LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear);
         help.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view){
-                LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-                ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_help_popup, null);
-                final PopupWindow popUpWindow = new PopupWindow(container,880,1100,true);
-                popUpWindow.showAtLocation(linearLayout, Gravity.NO_GRAVITY, 100,400);
+//                LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+//                ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.activity_help_popup, null);
+//                final PopupWindow popUpWindow = new PopupWindow(container,container.getHeight(),container.getWidth(),true);
+//                popUpWindow.showAtLocation(linearLayout, Gravity.NO_GRAVITY, 0,0);
+//
+//                //Tapping outside of popup window closes it
+//                container.setOnTouchListener(new View.OnTouchListener(){
+//
+//                    @Override
+//                    public boolean onTouch(View view, MotionEvent motionEvent){
+//                        popUpWindow.dismiss();
+//                        return true;
+//                    }
+//                });
+                PopupWindow popUpWindow = new PopupWindow(linearLayout);
+                if (!popUpWindow.isShowing()) {
+                    popUpWindow.showAtLocation(linearLayout, Gravity.BOTTOM, 10, 10);
+                    popUpWindow.update(50, 50, 320, 90);
+                } else {
+                    popUpWindow.dismiss();
+                }
+                LinearLayout containerLayout = new LinearLayout(getApplicationContext());
+                ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+                containerLayout.setOrientation(LinearLayout.VERTICAL);
+                //containerLayout.addView(tvMsg, layoutParams);
+                //popUpWindow.setContentView(R.layout.activity_help_popup);
+                //linearLayout.addView(, layoutParams);
 
-                //Tapping outside of popup window closes it
-                container.setOnTouchListener(new View.OnTouchListener(){
-
-                    @Override
-                    public boolean onTouch(View view, MotionEvent motionEvent){
-                        popUpWindow.dismiss();
-                        return true;
-                    }
-                });
             }
         });
     }
@@ -104,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
         advSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goSearch = new Intent(MainActivity.this, SearchActivity.class);
-                startActivity(goSearch);
+                Intent goAdvSearch = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(goAdvSearch);
             }
         });
     }

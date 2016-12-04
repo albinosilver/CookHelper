@@ -10,62 +10,76 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:weightSum="1">
 
-    <Switch
-        android:text="Advanced Search"
+    <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/switch1" />
+        layout="@layout/activity_search_layout" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|left"
+        android:foregroundGravity="bottom|right">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="304dp"
+            android:id="@+id/recipeList"
+            android:layout_weight="0.53"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:srcCompat="@android:drawable/ic_menu_add"
+            android:id="@+id/addRecipeButton"
+            android:foregroundGravity="bottom|right"
+            android:layout_gravity="bottom|right"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+    <!--<LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:layout_height="wrap_content">
 
-
-        <EditText
-            android:layout_height="wrap_content"
-            android:inputType="textFilter"
-            android:text="Search...."
-            android:ems="10"
-            android:id="@+id/editText"
-            android:layout_weight="1"
-            android:layout_width="70dp" />
-
-        <Spinner
-            android:layout_height="match_parent"
-            android:id="@+id/spinner"
+        <Button
             android:layout_width="wrap_content"
-            android:entries="@array/search_type_array" />
+            android:layout_height="wrap_content"
+            android:id="@+id/homeButton"
+            android:layout_weight="1" />
 
-    </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/categoryButton"
+            android:layout_weight="1" />
 
-    <Button
-        android:text="Search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="@color/white_text" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/typeButton"
+            android:layout_weight="1" />
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="288dp"
-        android:id="@+id/listView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_weight="0.64" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ingredientButton"
+            android:layout_weight="1" />
 
-    <Button
-        android:text="Add Recipe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/addButton"
-        android:layout_weight="0.02"
-        android:textColor="@color/white_text"
-        android:backgroundTint="@color/colorAccent"
-        android:onClick="addRecipe"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addRecipeButton"
+            android:layout_weight="1" />
+    </LinearLayout>-->
 
 </LinearLayout>

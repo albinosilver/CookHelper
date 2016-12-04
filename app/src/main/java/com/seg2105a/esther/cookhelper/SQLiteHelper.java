@@ -173,13 +173,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public void updateRecipe(ContactModel contact) {
+    public void updateRecipe(Recipe recipe) {
         database = this.getReadableDatabase();
         //database.execSQL("update " + TABLE_NAME + " set " + COLUMN_FIRST_NAME + " = '" + contact.getFirstName() + "', " + COLUMN_LAST_NAME + " = '" + contact.getLastName() + "' where " + COLUMN_ID + " = '" + contact.getID() + "'");
         database.close();
     }
 
-    public void deleteRecipe(ContactModel contact) {
+    public void deleteRecipe(Recipe recipe) {
         database = this.getReadableDatabase();
         //database.execSQL("delete from " + TABLE_NAME + " where " + COLUMN_ID + " = '" + contact.getID() + "'");
         database.close();
@@ -190,7 +190,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         Cursor cursor = database.rawQuery("SELECT  * FROM " + TABLE_RECIPE, null);
 
         ArrayList<Recipe> recipes = new ArrayList<Recipe>();
-        ContactModel contactModel;
+
         if (cursor.moveToFirst()) {
             do {
                 Recipe r = new Recipe();

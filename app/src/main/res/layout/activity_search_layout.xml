@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Switch
+        android:text="Advanced Search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchSwitch"
+        android:layout_weight="0.82" />
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_advanced_search_layout"
+        android:layout_weight="0.82"
+        android:visibility="gone"
+        android:id="@+id/advancedSearch" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.82"
+        android:id="@+id/basicSearch">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <EditText
+
+                android:layout_height="wrap_content"
+                android:inputType="textFilter"
+                android:ems="10"
+                android:id="@+id/searchBox"
+                android:layout_weight="1"
+                android:layout_width="70dp"
+                android:hint="Search..."
+                />
+
+            <Spinner
+                android:id="@+id/searchType"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:entries="@array/search_type_array" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.82"
+            android:backgroundTint="@color/colorPrimary"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/white_text"
+            android:text="Search" />
+
+
+    </LinearLayout>
+</LinearLayout>

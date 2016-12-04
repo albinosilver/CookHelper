@@ -241,18 +241,18 @@
                     android:text="Add Image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView25" />
+                    android:id="@+id/addImageLabel" />
 
                 <EditText
                     android:layout_width="163dp"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/editText13"
+                    android:id="@+id/addImageInput"
                     android:layout_weight="0.38" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/browseButton"
                     android:layout_width="68dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimary"
@@ -270,12 +270,12 @@
                     android:text="Rating:"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView24" />
+                    android:id="@+id/addRatingLabel" />
 
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ratingBar3"
+                    android:id="@+id/addRating"
                     android:numStars="5" />
             </LinearLayout>
 
@@ -288,7 +288,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Add Ingredients: "
-                    android:id="@+id/titleFeatured"
+                    android:id="@+id/addIngredientlabel"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true" />
@@ -298,7 +298,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
                     android:ems="10"
-                    android:id="@+id/editText8"
+                    android:id="@+id/addIngredientInput"
                     android:layout_below="@+id/titleFeatured"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true" />
@@ -322,8 +322,8 @@
                     android:text="Add Instructions:"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView8"
-                    android:layout_above="@+id/editText9"
+                    android:id="@+id/addRecipeStepLabel"
+                    android:layout_above="@+id/addRecipeStepInput"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true" />
 
@@ -331,8 +331,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="58dp"
                     android:ems="10"
-                    android:id="@+id/editText9"
-                    android:layout_above="@+id/button"
+                    android:id="@+id/addRecipeStepInput"
+                    android:layout_above="@+id/saveButton"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:inputType="textMultiLine" />
@@ -362,7 +362,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:id="@+id/button"
+                    android:id="@+id/saveButton"
                     android:layout_weight="1"
                     android:textColor="@color/white_text"
                     android:backgroundTint="@color/colorPrimary" />
@@ -374,7 +374,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:id="@+id/button2"
+                    android:id="@+id/cancelButton"
                     android:layout_weight="1"
                     android:textColor="@color/white_text"
                     android:backgroundTint="@color/colorAccent" />
