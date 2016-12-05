@@ -62,4 +62,9 @@ public class EditRecipeActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void newAttribute (View v) {
+        Intent goSearch = new Intent(EditRecipeActivity.this, EditAttributeActivity.class);
+        startActivity(goSearch);
+    }
 }
